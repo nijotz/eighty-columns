@@ -2,3 +2,8 @@ A simple vim plugin for toggling the coloring of the 80 column limit.  This was
 in my vimrc, but thought I'd pull it out to a plugin share with others.  Just
 drop this in the bundle directory if you have pathogen. Otherwise, the contents
 of eighty-cols.vim can simply be placed in vimrc.
+
+<Leader>80 toggles coloring of every column after 80
+
+The plugin assumes you're using 256 colors and are using a dark theme as it
+uses a dark grey for the background.
