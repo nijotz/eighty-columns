@@ -7,7 +7,7 @@
 " windo let &colorcolumn = join(range(100,999),",")
 
 function! g:ToggleColorColumn()
-    " Default to all columns after 80
+    " First time this has been run in the current buffer
     if !exists('b:color_column_old')
         if &colorcolumn == 0
             let b:color_column_old = join(range(81,999),",")
@@ -25,3 +25,8 @@ function! g:ToggleColorColumn()
         let b:color_column_old = 0
     endif
 endfunction
+
+" default to 80 columns if not set
+if &colorcolumn == ""
+    let &colorcolumn = join(range(81,999),",")
+endif
