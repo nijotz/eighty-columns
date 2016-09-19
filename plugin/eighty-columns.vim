@@ -1,4 +1,5 @@
-" Toggle columns after 80 being colored using keystroke.
+" Bind a key to toggle coloring lines past 80, in your vimrc:
+" nnoremap <leader>8 :call ToggleColorColumn()<cr>
 " Toggles per buffer
 " Defaults to all columns after 80 being colored.
 " If colorcolumn is set in a buffer, it will toggle between that and 0.
@@ -24,6 +25,3 @@ function! g:ToggleColorColumn()
         let b:color_column_old = 0
     endif
 endfunction
-
-" Bind a key to toggle function
-nnoremap <Leader>80 :call <SID>ToggleColorColumn()<cr>
