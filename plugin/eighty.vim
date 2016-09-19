@@ -6,7 +6,7 @@
 " To use 100, for example, in your vimrc:
 " windo let &colorcolumn = join(range(100,999),",")
 
-function! g:ToggleColorColumn()
+function! eighty#ToggleColorColumn()
     " First time this has been run in the current buffer
     if !exists('b:color_column_old')
         if &colorcolumn == 0
