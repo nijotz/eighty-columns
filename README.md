@@ -3,21 +3,21 @@ in my vimrc, but thought I'd pull it out to a plugin share with others.  Just
 drop this in the bundle directory if you have pathogen. Otherwise, the contents
 of eighty-cols.vim can simply be placed in your vimrc.
 
-* Toggles per buffer
 * Defaults to all columns after 80 being colored.
-* If colorcolumn is set in a buffer, it will toggle between that and 0.
+* Toggles globally
+* Toggles between 80, 100, 120, and off
 
 Bind a key to toggle coloring lines past 80, in your vimrc:
 ```vimrc
-nnoremap <leader>8 :call ToggleColorColumn()<cr>
+nnoremap <leader>8 :call eighty#ToggleColorColumn()<cr>
 ```
 
-To use 100, for example, in your vimrc:
+To use different values set eighty_columns_toggles
 ```vimrc
-windo let &colorcolumn = join(range(100,999),",")
+let g:eighty_columns_toggles = [90, 105, 0]
 ```
 
 Default to no coloring (toggle eighty columns off on new buffers)
 ```vimrc
-autocmd BufNewFile,BufRead * :call eighty#ToggleColorColumn()
+let g:eighty_columns_show = 0
 ```
