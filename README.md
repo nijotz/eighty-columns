@@ -1,11 +1,13 @@
-A simple vim plugin for toggling the coloring of the 80 column limit.  This was
-in my vimrc, but thought I'd pull it out to a plugin share with others.  Just
-drop this in the bundle directory if you have pathogen. Otherwise, the contents
-of eighty-cols.vim can simply be placed in your vimrc.
+A simple vim plugin for toggling the coloring of, and the wrapping of text, at
+the 80 column limit.  This was in my vimrc, but thought I'd pull it out to a
+plugin to share with others.  Just drop this in the bundle directory if you have
+pathogen. Otherwise, the contents of eighty-columns can simply be placed in your
+vimrc.
 
 * Defaults to all columns after 80 being colored.
-* Toggles globally
-* Toggles between 80, 100, 120, and off
+* Toggles per buffer.
+* Toggles between 80, 100, 120, and off.
+* Also sets `textwidth` so that `gq`, `gqq`, etc. wrap at the column limit.
 
 Bind a key to toggle coloring lines past 80, in your vimrc:
 ```vimrc

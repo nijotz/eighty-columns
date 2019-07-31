@@ -1,5 +1,9 @@
+" Controls line wrapping. Colors columns past 80 and sets up `gq` to wrap at 80
+" (or 100 or 120).
+"
 " Bind a key to toggle coloring lines past 80, in your vimrc:
 " nnoremap <leader>8 :call eighty#ToggleColorColumn()<cr>
+"
 " Defaults to all columns after 80 being colored.
 " Toggles between 80, 100, 120, and off
 " Toggles globally
@@ -17,8 +21,10 @@ endif
 function! eighty#SetColorColumn(num_columns)
     if a:num_columns == 0 || a:num_columns == ""
         let &colorcolumn = ""
+        let &tw=0
     else
         let &colorcolumn = join(range(a:num_columns+1,999),",")
+        let &tw=a:num_columns
     endif
 endfunction
 
